@@ -7,7 +7,7 @@ export default function SelectType({ ...props }): JSX.Element {
   const [requestType, setRequestType] = useState('GET');
 
   const opts = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
-    .map(val => (<option value={val}>{val}</option>));
+    .map(val => (<option value={val} key={val.toLowerCase()}>{val}</option>));
 
   const handleChange: React.ChangeEventHandler<HTMLSelectElement> = e => {
     const val = e?.target?.value;
